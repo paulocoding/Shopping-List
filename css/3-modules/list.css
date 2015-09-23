@@ -1,0 +1,29 @@
+.list {
+  display: block;
+  background-color: #AACCEE;
+  width: 500px;
+  height: 800px;
+  margin: 10px auto 0 auto;
+  text-align: center; }
+  .list button {
+    background-color: #263e59;
+    color: #8ee8d1;
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer; }
+  .list input {
+    background-color: #263e59;
+    color: #8ee8d1;
+    border: none;
+    margin: 5px;
+    padding: 5px; }
+  .list ul {
+    list-style-type: none; }
+  .list li {
+    display: block;
+    background-color: #2299cc;
+    color: #efe;
+    width: 90%;
+    margin: 1% auto 1% auto;
+    font-size: 2em; }
