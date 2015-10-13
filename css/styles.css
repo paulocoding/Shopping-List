@@ -75,4 +75,22 @@ h3 {
     color: #efe;
     width: 90%;
     margin: 1% auto 1% auto;
-    font-size: 2em; }
+    font-size: 2em;
+    -webkit-border-radius: 4px;
+            border-radius: 4px; }
+
+.deleteBtn {
+  display: inline-block;
+  color: #fff;
+  float: right;
+  margin: 5px;
+  background-color: #263e59;
+  width: 40px;
+  font-size: 26px;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+          border-radius: 2px; }
+
+.deleteBtn:hover {
+  background-color: #99CCff;
+  color: #263e59; }
