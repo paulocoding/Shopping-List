@@ -2,11 +2,19 @@ $(document).ready(function(){
 	
 	
 	var items = [];
-	if (getCookie('items')) {
-		
+	var cookie = getCookie('items'); 
+	if (cookie) {
+		items = sToArray(cookie);
+		for (var i=0, l=items.length; i<l; i++) {
+			addToList(items[i]);
+		}
 	}
 	else {
-		
+			addToList('Bread');
+			items.push('Bread');
+			addToList('Milk');	
+			items.push('Milk');	
+			saveCookie('items', items);
 	}
 	
 	// gets a specific cookie
@@ -24,6 +32,11 @@ $(document).ready(function(){
 		return found;
 	}
 	
+	// saved cookie value to array
+	function sToArray(s) {
+		return s.split(',');
+	}
+	
 	// cookie saving function
 	function saveCookie(name, value) {
 		var d = new Date();
@@ -33,25 +46,53 @@ $(document).ready(function(){
 		document.cookie = name + '=' + value + '; '+ expires;
 	}
 	
-	// delete cookie fuction
+	// delete cookie function
 	function deleteCookie(name) {
 		document.cookie = name+'= ;expires=Thu, 01 Jan 1970 00:00:00 UTC';
 	}
 	
-	// add item 
+	// add item (generic)
+	function addToList(shopItem) {
+		$('.list ul').append('<li>'+shopItem+'<span class="deleteBtn">X</span></li>');
+	}
+	
+	// add  item on click function 
 	$('#addToList').click(function () {
-		var shopItem = document.getElementById('shopItem').value;
-		if (shopItem){
+			var shopItem = '';
+			shopItem = document.getElementById('shopItem').value;
+			console.log('shopItem > '+shopItem);
+			if (shopItem){
+				addToList(shopItem);
+				items.push(shopItem);
+			}
 			document.getElementById('shopItem').value = '';
-			$('.list ul').append('<li>'+shopItem+'<span class="deleteBtn">X</span></li>');
-		}
+			deleteCookie('items');	
+			saveCookie('items', items);
+			console.log('items > '+items);
+		});
+		
+	// clear button -> clears all items
+	$('#clear').click(function () {
+		items=[];
+		$('li').remove();
+		saveCookie('items', []);
+		deleteCookie('items');
+		console.log(items);			
 	});
 	
 	// remove item 
 	function removeItem(e) {
 		var target = e.target.parentNode;
 		if(target.nodeName === 'LI') {
+				for (var i=0, l=items.length; i<l;i++) {
+					if (target.textContent === items[i]+'X') {
+						items.splice(i, 1);
+						console.log('sucess!');
+					}
+				}
 				$(target).remove();
+				deleteCookie('items');
+				saveCookie('items', items);	
 		}
 	};
 	
