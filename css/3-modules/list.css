@@ -2,8 +2,9 @@
   display: block;
   background-color: #AACCEE;
   width: 500px;
-  height: 800px;
+  min-height: 800px;
   margin: 10px auto 0 auto;
+  padding-top: 15px;
   text-align: center; }
   .list button {
     background-color: #263e59;

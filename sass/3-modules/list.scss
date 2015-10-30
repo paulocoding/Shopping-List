@@ -3,37 +3,38 @@
 	display: block;
 	background-color: #AACCEE;
 	width: 500px;
-	height: 800px;	
+	min-height: 800px;	
 	margin: 10px auto 0 auto;
+	padding-top: 15px;
 	text-align: center;
 	
-	button {
-		background-color: #263e59;
-		color: #8ee8d1;
-		border: none;
-		margin: 5px;
-		padding: 5px;
-		cursor:pointer;
-	}
-	input {
-		background-color: #263e59;
-		color: #8ee8d1;
-		border: none;
-		margin: 5px;
-		padding: 5px; 
-	}
-	 ul {
-			list-style-type: none;
-	}
-	li {
-		display: block;
-		background-color: #2299cc;
-		color: #efe;
-		width: 90%;
-		margin: 1% auto 1% auto;
-		font-size: 2em;
-		border-radius: 4px;	
-	}
+		button {
+			background-color: #263e59;
+			color: #8ee8d1;
+			border: none;
+			margin: 5px;
+			padding: 5px;
+			cursor:pointer;
+		}
+		input {
+			background-color: #263e59;
+			color: #8ee8d1;
+			border: none;
+			margin: 5px;
+			padding: 5px; 
+		}
+		ul {
+				list-style-type: none;
+		}
+		li {
+			display: block;
+			background-color: #2299cc;
+			color: #efe;
+			width: 90%;
+			margin: 1% auto 1% auto;
+			font-size: 2em;
+			border-radius: 4px;	
+		}
 }
 
 .deleteBtn{
