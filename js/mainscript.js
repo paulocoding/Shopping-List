@@ -15,6 +15,7 @@ $(document).ready(function(){
 			addToList('Milk');	
 			items.push('Milk');	
 			saveCookie('items', items);
+			deleteCookie('items');	
 	}
 	
 	// gets a specific cookie
@@ -60,7 +61,6 @@ $(document).ready(function(){
 	$('#addToList').click(function () {
 			var shopItem = '';
 			shopItem = document.getElementById('shopItem').value;
-			console.log('shopItem > '+shopItem);
 			if (shopItem){
 				addToList(shopItem);
 				items.push(shopItem);
@@ -68,7 +68,6 @@ $(document).ready(function(){
 			document.getElementById('shopItem').value = '';
 			deleteCookie('items');	
 			saveCookie('items', items);
-			console.log('items > '+items);
 		});
 		
 	// clear button -> clears all items
@@ -77,7 +76,6 @@ $(document).ready(function(){
 		$('li').remove();
 		saveCookie('items', []);
 		deleteCookie('items');
-		console.log(items);			
 	});
 	
 	// remove item 
@@ -87,7 +85,6 @@ $(document).ready(function(){
 				for (var i=0, l=items.length; i<l;i++) {
 					if (target.textContent === items[i]+'X') {
 						items.splice(i, 1);
-						console.log('sucess!');
 					}
 				}
 				$(target).remove();
